@@ -34,8 +34,19 @@
         return(playerSelection + " vs. " + computerSelection + ". It's a draw!");
       }
     }
-    
-    const playerSelection = prompt("Choose rock, paper or scissors!");
+
+    function funcPlayerChoice() {
+      const playerChoice = prompt("Choose rock, paper or scissors!");
+      const lowPlayerChoice = playerChoice.toLowerCase();
+      if (lowPlayerChoice == "rock" || lowPlayerChoice == "paper" || lowPlayerChoice == "scissors") {
+      return lowPlayerChoice;
+      } else {
+        alert("Wrong choice! Choose again!");
+      }
+    }
+
+    const playerSelection = funcPlayerChoice();
+      
     const computerSelection = computerPlay();
 
     console.log(playRound(playerSelection, computerSelection));
