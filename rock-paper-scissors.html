@@ -6,11 +6,39 @@
 </head>
 <body>
   <script>
-      function computerPlay() {
+    function computerPlay() {
+      const rpsChoices = ["rock", "paper", "scissors"];
+      const randomChoice = rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
 
+      return randomChoice;
+    }
+
+    function playRound(playerSelection, computerSeleciton) {
+      if (playerSelection == "rock" && computerSelection == "rock") {
+        return(playerSelection + " vs. " + computerSelection + ". It's a draw!");
+      } else if (playerSelection == "rock" && computerSelection == "paper") {
+        return(playerSelection + " vs. " + computerSelection + ". Computer wins!");
+      } else if (playerSelection == "rock" && computerSelection == "scissors") {
+        return(playerSelection + " vs. " + computerSelection + ". You win!");
+      } else if (playerSelection == "paper" && computerSelection == "rock") {
+        return(playerSelection + " vs. " + computerSelection + ". You win!");
+      } else if (playerSelection == "paper" && computerSelection == "paper") {
+        return(playerSelection + " vs. " + computerSelection + ". It's a draw!");
+      } else if (playerSelection == "paper" && computerSelection == "scissors") {
+        return(playerSelection + " vs. " + computerSelection + ". Computer wins!");
+      } else if (playerSelection == "scissors" && computerSelection == "rock") {
+        return(playerSelection + " vs. " + computerSelection + ". Computer wins!");
+      } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        return(playerSelection + " vs. " + computerSelection + ". You win!");
+      } else if (playerSelection == "scissors" && computerSelection == "scissors") {
+        return(playerSelection + " vs. " + computerSelection + ". It's a draw!");
       }
+    }
+    
+    const playerSelection = prompt("Choose rock, paper or scissors!");
+    const computerSelection = computerPlay();
 
-      
+    console.log(playRound(playerSelection, computerSelection));
   </script>
 </body>
 </html>
